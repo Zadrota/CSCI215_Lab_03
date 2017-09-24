@@ -24,7 +24,12 @@ function calculate() {
     // Body Surface Area (BSA)
     // -------------------------------
 
-    var BSA = 0;
+    BSA = 0;
+    heightincm = 0;
+    weightinkg = 0;
+    heightincm = height*2.54;
+    weightinkg = weight*.454;
+    BSA = Math.sqrt((heightincm*weightinkg)/3600);
 
     // ==========================================
     // Todo: Perform BSA calculation here
@@ -40,24 +45,27 @@ function calculate() {
         // ==========================================
         // Todo: Perform female IBW calculation here
 
+        IBW = 45.5+2.3*(height-60);
 
     } else if ( male ) {
 
         // ==========================================
         // Todo: Perform male IBW calculation here
 
+        IBW = 50+2.3*(height-60);
     }
 
     // -------------------------------
     // Body Mass Index (BMI)
     // -------------------------------
 
-    var BMI = 0;
+
 
     // ==========================================
     // Todo: Perform BMI calculation here
 
-
+    BMI = 0;
+    BMI = (weightinkg/(Math.pow((heightincm/100),2)));
 
     // Do not modify this function call
     display( BSA, IBW, BMI );
